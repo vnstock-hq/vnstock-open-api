@@ -1,0 +1,13 @@
+source = "ssi"
+title = "SSI FastConnect API"
+terms_url = "https://developers.ssi.com.vn/term-condition"
+docs_url = "https://developers.ssi.com.vn/docs/api-reference"
+checked_at = "2026-10-27"
+summary = [
+  "Mục 3: thông tin nhận được từ API chỉ phục vụ mục đích của chính Khách hàng có tài khoản, đúng phạm vi điều khoản nêu (xem nguyên văn).",
+  "Mục 3: không được cung cấp cho bên thứ ba, dù một phần hay toàn bộ thông tin.",
+  "Mục 3: không được cung cấp thông tin xác thực (khóa bí mật) API cho bất kỳ đối tượng nào khác.",
+  "Mục 4.3: SSI có quyền ngừng dịch vụ theo quyết định của SSI; dịch vụ bị ngừng khi 90 ngày không kết nối.",
+]
+note = "Tóm tắt kỹ thuật, có số điều, không diễn giải thêm, chưa phải ý kiến pháp lý. Điều khoản gốc là bản có hiệu lực."
+

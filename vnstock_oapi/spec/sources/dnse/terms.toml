@@ -1,0 +1,13 @@
+source = "dnse"
+title = "DNSE Lightspeed API"
+terms_url = "https://hdsd.dnse.com.vn/die-u-khoa-n-di-ch-vu-dnse/dieu-khoan-san-pham-dich-vu/dieu-khoan-san-pham-lightspeed-api"
+docs_url = "https://developers.dnse.com.vn/docs/guide/intro/authentication/"
+checked_at = "2026-10-27"
+summary = [
+  "§2(đ): dữ liệu chỉ phục vụ mục đích của chính Khách hàng có tài khoản, đúng phạm vi điều khoản nêu (xem nguyên văn).",
+  "§2(đ): không được cung cấp cho bên thứ ba một phần hay toàn bộ thông tin, trừ khi thông báo bằng văn bản và được DNSE chấp thuận.",
+  "§2(a), §2(d): bảo mật tuyệt đối thông tin xác thực, không cung cấp cho bên khác.",
+  "§2(e): tuân thủ giới hạn và tần suất gọi API, dùng HTTPS, theo yêu cầu kỹ thuật của DNSE.",
+  "§2(g): DNSE được truy cập, kiểm tra hệ thống giao dịch của Khách hàng bất kỳ lúc nào.",
+]
+note = "Tóm tắt kỹ thuật, có số điều, không diễn giải thêm, chưa phải ý kiến pháp lý. Điều khoản gốc là bản có hiệu lực."

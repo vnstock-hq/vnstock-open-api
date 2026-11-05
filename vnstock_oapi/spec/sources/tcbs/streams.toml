@@ -1,0 +1,190 @@
+source = "tcbs"
+title = "TCBS iFlash Open API stream"
+protocol = "tcbs_pipe"
+url = "wss://openapi.tcbs.com.vn/ws/thesis/v1/stream/normal"
+encoding = "text"
+docs_url = "https://developers.tcbs.com.vn/docs/v1.0.0/stock/ws-price-board/"
+checked_at = "2026-10-29"
+auth = "tcbs_jwt"
+heartbeat_s = 2
+type_field = "channel"
+control_field = "d"
+
+forbidden = ["order", "orders", "position", "positions", "account", "stock_order", "de_order",
+             "de_conditional_order", "de_open_position"]
+forbidden_paths = ["/ws/aither", "/ws/nesoi"]
+
+[endpoints]
+normal = { url = "wss://openapi.tcbs.com.vn/ws/thesis/v1/stream/normal", subscribe = "d|s|{object}|{props}|{symbols}", heartbeat = "d|p|||" }
+derivative = { url = "wss://openapi.tcbs.com.vn/ws/thesis/v1/stream/derivative", subscribe = "d|s|{object}|{props}|{symbols}", heartbeat = "d|p|||" }
+history = { url = "wss://openapi.tcbs.com.vn/ws/ouranos/v1/stream", subscribe = "d|st|{props}|{symbols}", heartbeat = "d|po" }
+
+[params]
+floor = ["1", "2", "3"]
+
+[[channels]]
+name = "bid"
+pattern = "bid"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "bi"
+message_types = ["1"]
+description = "Ba bước giá mua"
+
+[[channels]]
+name = "offer"
+pattern = "offer"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "op"
+message_types = ["2"]
+description = "Ba bước giá bán"
+
+[[channels]]
+name = "foreign"
+pattern = "foreign"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "fe"
+message_types = ["3"]
+description = "Khối ngoại mua, bán, room"
+
+[[channels]]
+name = "base_price"
+pattern = "base_price"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "bp"
+message_types = ["4"]
+description = "Giá trần, sàn, tham chiếu"
+
+[[channels]]
+name = "session_stats"
+pattern = "session_stats"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "mp"
+message_types = ["5"]
+description = "Cao, thấp, trung bình, mở cửa trong phiên"
+
+[[channels]]
+name = "match"
+pattern = "match"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "tm"
+message_types = ["6"]
+description = "Khớp lệnh: giá, khối lượng, tổng khối lượng, tổng giá trị"
+
+[[channels]]
+name = "match_history"
+pattern = "match_history"
+symbols = true
+endpoint = "normal"
+object = "tk"
+prop = "tmh"
+message_types = ["22"]
+description = "Từng lệnh khớp, có giờ; khi đăng ký thì nhận lại cả ngày. Một mã mỗi kết nối: dữ liệu không ghi mã"
+
+[[channels]]
+name = "index"
+pattern = "index"
+symbols = true
+endpoint = "normal"
+object = "si"
+prop = "rt"
+message_types = ["8"]
+description = "Chỉ số theo mã số TCBS (symbols là số chỉ số)"
+
+[[channels]]
+name = "put_through"
+pattern = "put_through.{floor}"
+symbols = false
+endpoint = "normal"
+object = "pt"
+prop = "ptm+ptb+pts"
+message_types = ["16", "17"]
+description = "Thoả thuận: chào mua, bán (16) và đã khớp (17)"
+
+[[channels]]
+name = "derivative_match"
+pattern = "derivative_match"
+symbols = true
+endpoint = "derivative"
+object = "tk"
+prop = "tm"
+message_types = ["21"]
+description = "Khớp lệnh phái sinh"
+
+[[channels]]
+name = "derivative_bid"
+pattern = "derivative_bid"
+symbols = true
+endpoint = "derivative"
+object = "tk"
+prop = "bi"
+message_types = ["23"]
+description = "Ba bước giá mua phái sinh"
+
+[[channels]]
+name = "derivative_offer"
+pattern = "derivative_offer"
+symbols = true
+endpoint = "derivative"
+object = "tk"
+prop = "op"
+message_types = ["24"]
+description = "Ba bước giá bán phái sinh"
+
+[[channels]]
+name = "derivative_stats"
+pattern = "derivative_stats"
+symbols = true
+endpoint = "derivative"
+object = "tk"
+prop = "mp"
+message_types = ["27"]
+description = "Cao, thấp, trung bình, mở cửa phái sinh"
+
+[[channels]]
+name = "derivative_foreign"
+pattern = "derivative_foreign"
+symbols = true
+endpoint = "derivative"
+object = "tk"
+prop = "fe"
+message_types = ["25"]
+description = "Khối ngoại mua, bán phái sinh"
+
+[[channels]]
+name = "history_1m"
+pattern = "history_1m"
+symbols = true
+endpoint = "history"
+prop = "C001"
+message_types = ["C001"]
+description = "Từng lệnh khớp cổ phiếu, có giờ khớp và bên chủ động, kèm mua, bán chủ động cộng dồn (tên kênh của nguồn: lịch sử giá 1 phút)"
+
+[[channels]]
+name = "supply_demand_1m"
+pattern = "supply_demand_1m"
+symbols = true
+endpoint = "history"
+prop = "C002S60"
+message_types = ["C002S60"]
+description = "Cung cầu chủ động cộng dồn theo phút"
+
+[[channels]]
+name = "supply_demand_15m"
+pattern = "supply_demand_15m"
+symbols = true
+endpoint = "history"
+prop = "C002S900"
+message_types = ["C002S900"]
+description = "Cung cầu chủ động cộng dồn 15 phút"

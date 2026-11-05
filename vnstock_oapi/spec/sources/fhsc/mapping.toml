@@ -1,0 +1,29 @@
+source = "fhsc"
+
+[interval]
+"5m" = "5"
+"15m" = "15"
+"30m" = "30"
+"1D" = "1D"
+
+[asset]
+equity = "stocks"
+index = "indices"
+etf = "etfs"
+fund = "funds"
+bond = "bonds"
+commodity = "commodities"
+crypto = "cryptos"
+forex = "forex"
+
+[exchange]
+HOSE = "HOSE"
+HNX = "HNX"
+UPCOM = "UPCOM"
+
+[report_period]
+year = "annual"
+quarter = "quarterly"
+
+[native_only]
+exchange = ["HCX"]

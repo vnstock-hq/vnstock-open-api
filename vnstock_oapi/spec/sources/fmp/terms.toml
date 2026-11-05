@@ -1,0 +1,16 @@
+source = "fmp"
+title = "Financial Modeling Prep"
+terms_url = "https://site.financialmodelingprep.com/terms-of-service"
+docs_url = "https://site.financialmodelingprep.com/developer/docs"
+signup_url = "https://intelligence.financialmodelingprep.com/pricing-plans?couponCode=thinhvu&utm_source=vnstock-official-site&utm_medium=vnstock-oapi&utm_campaign=thinhvu"
+signup_note = "Link giới thiệu của vnstock: thanh toán gói FMP qua link này được giảm 20%, và FMP trả hoa hồng cho vnstock. Gói Basic miễn phí không cần link."
+checked_at = "2026-10-28"
+summary = [
+  "§2.2.1: gói Personal chỉ cho cá nhân, mục đích riêng, phi kinh doanh, phi thương mại; không dùng thay mặt công ty, tổ chức, nhóm.",
+  "§2.2.1: không chia sẻ dữ liệu, không bán lại, không cho người khác truy cập qua tài khoản, không tích hợp vào công cụ hay ứng dụng mà bên thứ ba truy cập được, không hiển thị cho người khác.",
+  "§2.2.2: hiển thị dữ liệu FMP trên trang web, blog, phần mềm, ứng dụng cho nhiều người dùng cần thoả thuận riêng với FMP, dù miễn phí hay thu phí.",
+  "§2.3: cấm chia sẻ thông tin đăng nhập hay API Key với bất kỳ ai, hoặc để người khác dùng dịch vụ.",
+  "§2.6.1: không bán lại, cấp phép lại, phân phối hay cho bên thứ ba truy cập dữ liệu hoặc thông tin suy ra từ dữ liệu.",
+  "§6.3: khi chấm dứt, phải xoá mọi dữ liệu đã nhận, kể cả dữ liệu đệm.",
+]
+note = "Tóm tắt kỹ thuật, có số điều, không diễn giải thêm, chưa phải ý kiến pháp lý. Bản cập nhật ngày 01/08/2023, đối chiếu lại ngày 28/10/2026 (không đổi so với 06/10/2026)."

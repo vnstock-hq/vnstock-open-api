@@ -1,0 +1,85 @@
+source = "ssi"
+title = "SSI FastConnect Data stream"
+protocol = "signalr"
+url = "wss://fc-datahub.ssi.com.vn/v2.0/signalr/connect"
+encoding = "json"
+docs_url = "https://guide.ssi.com.vn/ssi-products/fastconnect-data/streaming-data"
+checked_at = "2026-11-03"
+auth = "ssi_fc_token"
+heartbeat_s = 20
+type_field = "DataType"
+control_field = "M"
+
+forbidden = ["order", "orders", "position", "positions", "account"]
+
+[signalr]
+token_url = "https://fc-data.ssi.com.vn/api/v2/Market/AccessToken"
+negotiate_url = "https://fc-datahub.ssi.com.vn/v2.0/signalr/negotiate"
+hub = "FcMarketDataV2Hub"
+method = "Broadcast"
+error_method = "Error"
+client_protocol = "1.5"
+
+[[channels]]
+name = "status"
+pattern = "status"
+symbols = true
+code = "F"
+message_types = ["F"]
+description = "Phiên và trạng thái giao dịch của mã"
+
+[[channels]]
+name = "snapshot"
+pattern = "snapshot"
+symbols = true
+code = "X"
+message_types = ["X"]
+description = "Ảnh chụp: giá khớp gần nhất, trần sàn tham chiếu, OHLC trong phiên, 10 bước giá"
+
+[[channels]]
+name = "quote"
+pattern = "quote"
+symbols = true
+code = "X-QUOTE"
+message_types = ["X-QUOTE"]
+description = "Bước giá mua bán tốt nhất (HOSE 3, HNX, UPCoM, phái sinh 10)"
+
+[[channels]]
+name = "trade"
+pattern = "trade"
+symbols = true
+code = "X-TRADE"
+message_types = ["X-TRADE"]
+description = "Khớp lệnh: giá, khối lượng, cộng dồn, bên chủ động"
+
+[[channels]]
+name = "foreign"
+pattern = "foreign"
+symbols = true
+code = "R"
+message_types = ["R"]
+description = "Khối ngoại mua, bán, room"
+
+[[channels]]
+name = "index"
+pattern = "index"
+symbols = true
+code = "MI"
+message_types = ["MI"]
+description = "Chỉ số trong phiên (symbols là mã chỉ số: VN30, VNINDEX, HNXINDEX, UPCOMINDEX...)"
+
+[[channels]]
+name = "ohlcv"
+pattern = "ohlcv"
+symbols = true
+code = "B"
+message_types = ["B"]
+description = "OHLCV theo từng lần khớp, cổ phiếu và chỉ số"
+
+[[channels]]
+name = "odd_lot"
+pattern = "odd_lot"
+symbols = true
+code = "OL"
+message_types = ["OL"]
+description = "Bảng lô lẻ: giá khớp, OHLC, 3 bước giá"

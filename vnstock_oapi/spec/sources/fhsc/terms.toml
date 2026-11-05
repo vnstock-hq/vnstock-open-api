@@ -1,0 +1,13 @@
+source = "fhsc"
+title = "FHSC Open API"
+terms_url = "https://fhsc.com.vn/chinh-sach-su-dung-cua-website-fhsc"
+docs_url = "https://developers.fhsc.com.vn/introduction"
+checked_at = "2026-10-28"
+summary = [
+  "§1: thông tin, dữ liệu trên website/ứng dụng chỉ dành cho mục đích thông tin và tham khảo; FHSC không đảm bảo độ chính xác, tính kịp thời.",
+  "§2: không được phân tán, sao chép, truyền tải, tái sử dụng, đăng công khai, tạo sản phẩm phát sinh nội dung của FHSC khi chưa có đồng ý bằng văn bản.",
+  "§5: cấm sao chép, phân phối, thương mại hoá nội dung khi chưa có đồng ý bằng văn bản của FHSC.",
+  "Tài liệu Open API: mọi request đi từ khoá của người dùng được xem là do người dùng thực hiện; người dùng tự bảo mật khoá.",
+  "Chưa thấy điều khoản riêng của Open API trên trang công khai; điều kiện ở trang Quản lý API (cần đăng nhập) chưa rà.",
+]
+note = "Tóm tắt kỹ thuật, có số điều, không diễn giải thêm, chưa phải ý kiến pháp lý. Chính sách website bản đăng 27/07/2026; điều khoản gốc là bản có hiệu lực."

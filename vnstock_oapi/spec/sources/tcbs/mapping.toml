@@ -1,0 +1,19 @@
+source = "tcbs"
+
+[interval]
+"1m" = "1"
+"5m" = "5"
+"15m" = "15"
+"30m" = "30"
+"1H" = "60"
+"1D" = "D"
+"1W" = "W"
+"1M" = "M"
+
+[asset]
+equity = "stock"
+index = "index"
+warrant = "coveredWarr"
+
+[symbol]
+UPCOMINDEX = "UPCOM"

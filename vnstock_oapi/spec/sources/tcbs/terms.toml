@@ -1,0 +1,14 @@
+source = "tcbs"
+title = "TCBS iFlash Open API"
+terms_url = "https://www.tcbs.com.vn/wp-content/uploads/2026/02/iFlash-TNC-Song-ngu.pdf"
+docs_url = "https://developers.tcbs.com.vn/"
+checked_at = "2026-10-27"
+summary = [
+  "§3(c): mọi thông tin, dữ liệu nhận qua iFlash Open API chỉ phục vụ mục đích của chính Khách hàng có tài khoản, đúng phạm vi điều khoản nêu (xem nguyên văn).",
+  "§3(c): không được cung cấp cho bên thứ ba, kể cả thông tin đã được xử lý từ thông tin nguyên bản, trừ khi TCBS chấp thuận bằng văn bản.",
+  "§2(a): bảo mật tuyệt đối, không cung cấp cho bên thứ ba thông tin xác thực do TCBS cung cấp.",
+  "§2(d): chỉ dùng iFlash Open API và Tài liệu Sử dụng cho việc truy cập, giao dịch trên tài khoản của Khách hàng.",
+  "§3(e): TCBS được truy cập, kiểm tra thiết bị, hệ thống kết nối iFlash Open API của Khách hàng bất kỳ lúc nào.",
+]
+note = "Tóm tắt kỹ thuật, có số điều, không diễn giải thêm, chưa phải ý kiến pháp lý. Điều khoản gốc là bản có hiệu lực."
+

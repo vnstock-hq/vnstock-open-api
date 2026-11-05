@@ -1,0 +1,20 @@
+source = "dnse"
+
+[interval]
+"1m" = "1"
+"3m" = "3"
+"5m" = "5"
+"15m" = "15"
+"30m" = "30"
+"1H" = "1H"
+"1D" = "1D"
+"1W" = "1W"
+
+[asset]
+equity = "STOCK"
+index = "INDEX"
+futures = "DERIVATIVE"
+
+[symbol]
+HNXINDEX = "HNX"
+UPCOMINDEX = "UPCOM"

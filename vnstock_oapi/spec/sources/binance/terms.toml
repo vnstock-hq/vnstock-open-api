@@ -1,0 +1,13 @@
+source = "binance"
+title = "Binance Spot API (public market data)"
+terms_url = "https://www.binance.com/en/terms"
+docs_url = "https://developers.binance.com/docs/binance-spot-api-docs/rest-api"
+checked_at = "2026-10-31"
+summary = [
+  "Terms of Use (hiệu lực 21/07/2026, luật ADGM): dịch vụ cho cá nhân người dùng; dùng thương mại hay phân phối lại dữ liệu cần giấy phép bằng văn bản của Binance.",
+  "Prohibited Use Policy §I: cấm bot, script truy cập tự động trừ khi được cho phép rõ ràng; cấm vượt qua giao thức loại trừ robot; cấm phân phối lại dữ liệu.",
+  "Tài liệu REST API, mục General API Information: API chỉ gửi dữ liệu thị trường công khai dùng gốc https://data-api.binance.vision, không cần API key (faqs/market_data_only.md).",
+  "Tài liệu REST API, mục LIMITS: hạn mức theo IP (REQUEST_WEIGHT 6000 mỗi phút); nhận 429 thì phải lùi lại; vi phạm lặp lại thì bị cấm IP tự động (418), từ 2 phút tới 3 ngày.",
+]
+note = "Tóm tắt kỹ thuật, không diễn giải thêm, chưa phải ý kiến pháp lý. Điều khoản gốc là bản có hiệu lực."
+

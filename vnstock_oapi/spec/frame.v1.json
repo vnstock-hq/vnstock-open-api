@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vnstock-oapi/frame.v1.json",
+  "title": "Frame v1",
+  "description": "One WebSocket message from an official broker stream, verbatim, as JSON Lines. Never carries a key, token, signature or handshake message. Một thông điệp WebSocket nguyên văn từ cổng stream chính thức; không bao giờ mang khoá, token, chữ ký hay thông điệp bắt tay.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["frame_version", "kind", "source", "channel", "conn_id", "seq", "recv_at_ns", "encoding", "payload", "producer"],
+  "properties": {
+    "frame_version": {"const": 1},
+    "kind": {
+      "enum": ["data", "connected", "reconnected", "gap", "closed"],
+      "description": "data: payload from the source. connected/reconnected: handshake and subscriptions done. gap: detail is {\"from_ns\", \"to_ns\"}, data in between may be missing. closed: detail is the reason."
+    },
+    "source": {"type": "string", "description": "ssi, dnse, tcbs"},
+    "channel": {"type": "string", "description": "Channel family from streams.toml (tick, top_price...), 'unknown' if the type is not declared, empty on control frames."},
+    "conn_id": {"type": "integer", "minimum": 1, "description": "Which connection received it; grows on every reconnect."},
+    "seq": {"type": "integer", "minimum": 1, "description": "Assigned by the client, strictly increasing across reconnects, data and control frames alike."},
+    "recv_at_ns": {"type": "integer", "description": "Local receive time, UTC nanoseconds."},
+    "encoding": {"enum": ["text", "binary"]},
+    "payload": {"type": "string", "description": "Text frames verbatim; binary frames base64. Empty on control frames."},
+    "detail": {"type": "string"},
+    "producer": {"type": "string", "pattern": "^vnstock-oapi@"}
+  }
+}

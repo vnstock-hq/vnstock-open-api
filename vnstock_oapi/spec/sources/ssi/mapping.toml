@@ -1,0 +1,12 @@
+source = "ssi"
+
+[interval]
+"1m" = "1m"
+"3m" = "3m"
+"5m" = "5m"
+"15m" = "15m"
+"1H" = "1h"
+"1D" = "1d"
+
+[symbol_by_operation."data-ohlc"]
+UPCOMINDEX = "HNXUPCOMINDEX"

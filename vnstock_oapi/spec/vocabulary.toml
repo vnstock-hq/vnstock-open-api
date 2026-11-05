@@ -1,0 +1,32 @@
+version = 1
+
+[interval]
+vi = "Khung thời gian"
+values = { "1m" = "1 phút", "3m" = "3 phút", "5m" = "5 phút", "15m" = "15 phút", "30m" = "30 phút", "1H" = "1 giờ", "4H" = "4 giờ", "1D" = "1 ngày", "1W" = "1 tuần", "1M" = "1 tháng" }
+aliases = { "m" = "1m", "minute" = "1m", "5M" = "5m", "15M" = "15m", "30M" = "30m", "h" = "1H", "H" = "1H", "1h" = "1H", "hour" = "1H", "4h" = "4H", "d" = "1D", "D" = "1D", "1d" = "1D", "day" = "1D", "w" = "1W", "W" = "1W", "1w" = "1W", "week" = "1W", "M" = "1M", "month" = "1M" }
+
+[asset]
+vi = "Nhóm tài sản: tham số `asset` của các thao tác chung"
+values = { equity = "Cổ phiếu", index = "Chỉ số", futures = "Hợp đồng tương lai", warrant = "Chứng quyền có bảo đảm", etf = "Quỹ ETF", fund = "Quỹ mở, quỹ đóng", bond = "Trái phiếu", commodity = "Hàng hoá", crypto = "Tiền mã hoá", forex = "Ngoại tệ" }
+aliases = { "stock" = "equity", "derivative" = "futures", "cw" = "warrant", "covered_warrant" = "warrant" }
+
+[exchange]
+vi = "Sàn"
+values = { HOSE = "Sàn HOSE (TP.HCM)", HNX = "Sàn HNX (Hà Nội)", UPCOM = "Thị trường UPCoM", DERIVATIVE = "Phái sinh (HNX)", BOND = "Trái phiếu (HNX)", DELISTED = "Đã huỷ niêm yết" }
+aliases = { "HSX" = "HOSE", "UPCoM" = "UPCOM" }
+
+[symbol]
+vi = "Mã chung: mã chứng khoán viết hoa; chỉ số theo cách viết của sở (VNINDEX, HNXINDEX, UPCOMINDEX, VN30)"
+
+[report_period]
+vi = "Kỳ báo cáo tài chính"
+values = { year = "Năm", quarter = "Quý" }
+aliases = { "yearly" = "year", "annual" = "year", "y" = "year", "quarterly" = "quarter", "q" = "quarter" }
+
+[sensitive]
+keys = [
+    "apikey", "api_key", "x-api-key", "x-fh-apikey", "apisecret", "api_secret", "secret",
+    "privatekey", "private_key", "otp", "pin", "password", "username", "token", "accesstoken",
+    "access_token", "refreshtoken", "refresh_token", "trading-token", "authorization", "signature",
+    "x-signature", "transactionid", "transaction_id", "accountno", "account_no",
+]
