@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vnstock-oapi/envelope.v1.json",
+  "title": "vnstock-oapi envelope v1",
+  "description": "Một phong bì cho một response của Open API chính thức. Body giữ nguyên văn. request không bao giờ chứa khoá, chữ ký, token hay header.",
+  "type": "object",
+  "required": ["envelope_version", "source", "operation", "request", "fetched_at", "http_status", "body_sha256", "producer"],
+  "properties": {
+    "envelope_version": { "const": "1" },
+    "source": { "type": "string", "examples": ["ssi", "fhsc", "fmp"] },
+    "operation": { "type": "string", "description": "Tên thao tác gốc theo tài liệu nguồn, ví dụ data-ohlc, price/ohlc, stock/bars" },
+    "api_version": { "type": "string" },
+    "request": {
+      "type": "object",
+      "propertyNames": {
+        "not": { "pattern": "^[-_]*(?:[aA][-_]*[cC][-_]*[cC][-_]*[eE][-_]*[sS][-_]*[sS][-_]*[tT][-_]*[oO][-_]*[kK][-_]*[eE][-_]*[nN]|[aA][-_]*[cC][-_]*[cC][-_]*[oO][-_]*[uU][-_]*[nN][-_]*[tT][-_]*[nN][-_]*[oO]|[aA][-_]*[pP][-_]*[iI][-_]*[kK][-_]*[eE][-_]*[yY]|[aA][-_]*[pP][-_]*[iI][-_]*[sS][-_]*[eE][-_]*[cC][-_]*[rR][-_]*[eE][-_]*[tT]|[aA][-_]*[uU][-_]*[tT][-_]*[hH][-_]*[oO][-_]*[rR][-_]*[iI][-_]*[zZ][-_]*[aA][-_]*[tT][-_]*[iI][-_]*[oO][-_]*[nN]|[oO][-_]*[tT][-_]*[pP]|[pP][-_]*[aA][-_]*[sS][-_]*[sS][-_]*[wW][-_]*[oO][-_]*[rR][-_]*[dD]|[pP][-_]*[iI][-_]*[nN]|[pP][-_]*[rR][-_]*[iI][-_]*[vV][-_]*[aA][-_]*[tT][-_]*[eE][-_]*[kK][-_]*[eE][-_]*[yY]|[rR][-_]*[eE][-_]*[fF][-_]*[rR][-_]*[eE][-_]*[sS][-_]*[hH][-_]*[tT][-_]*[oO][-_]*[kK][-_]*[eE][-_]*[nN]|[sS][-_]*[eE][-_]*[cC][-_]*[rR][-_]*[eE][-_]*[tT]|[sS][-_]*[iI][-_]*[gG][-_]*[nN][-_]*[aA][-_]*[tT][-_]*[uU][-_]*[rR][-_]*[eE]|[tT][-_]*[oO][-_]*[kK][-_]*[eE][-_]*[nN]|[tT][-_]*[rR][-_]*[aA][-_]*[dD][-_]*[iI][-_]*[nN][-_]*[gG][-_]*[tT][-_]*[oO][-_]*[kK][-_]*[eE][-_]*[nN]|[tT][-_]*[rR][-_]*[aA][-_]*[nN][-_]*[sS][-_]*[aA][-_]*[cC][-_]*[tT][-_]*[iI][-_]*[oO][-_]*[nN][-_]*[iI][-_]*[dD]|[uU][-_]*[sS][-_]*[eE][-_]*[rR][-_]*[nN][-_]*[aA][-_]*[mM][-_]*[eE]|[xX][-_]*[aA][-_]*[pP][-_]*[iI][-_]*[kK][-_]*[eE][-_]*[yY]|[xX][-_]*[fF][-_]*[hH][-_]*[aA][-_]*[pP][-_]*[iI][-_]*[kK][-_]*[eE][-_]*[yY]|[xX][-_]*[sS][-_]*[iI][-_]*[gG][-_]*[nN][-_]*[aA][-_]*[tT][-_]*[uU][-_]*[rR][-_]*[eE])[-_]*$" },
+        "description": "Tên khoá nhạy cảm, không phân biệt hoa thường, bỏ qua - và _ (khớp redact.is_sensitive)"
+      }
+    },
+    "fetched_at": { "type": "string", "format": "date-time" },
+    "http_status": { "type": "integer" },
+    "body": {},
+    "body_base64": { "type": "string", "contentEncoding": "base64" },
+    "body_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "producer": {
+      "type": "object",
+      "required": ["name"],
+      "properties": { "name": { "type": "string" }, "version": { "type": "string" } }
+    },
+    "truncated": {
+      "type": "object",
+      "description": "Có ở phong bì cuối khi câu trả lời còn thiếu so với dữ liệu nguồn có. Bên đọc phong bì nên cảnh báo người dùng.",
+      "required": ["reason", "pages"],
+      "properties": {
+        "reason": { "enum": ["page_limit"], "description": "page_limit: dừng vì chạm trần số trang, nguồn vẫn còn trang tiếp" },
+        "pages": { "type": "integer", "description": "Số trang đã lấy của lần gọi này" }
+      },
+      "additionalProperties": false
+    },
+    "transport": {
+      "type": "object",
+      "properties": {
+        "domain": { "type": "string" },
+        "protocol": { "const": "https" },
+        "method": { "const": "GET" },
+        "latency_ms": { "type": "integer" },
+        "request_count": { "type": "integer" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,152 @@
+source = "binance"
+title = "Binance Spot public market streams"
+protocol = "binance"
+url = "wss://data-stream.binance.vision/stream"
+encoding = "json"
+docs_url = "https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams"
+checked_at = "2026-11-03"
+auth = "public"
+heartbeat_s = 20
+type_field = "e"
+control_field = "result"
+
+forbidden = ["order", "orders", "position", "positions", "account", "user_data", "listenkey"]
+
+[limits]
+streams_per_connection = 1024
+connection_hours = 24
+reconnect_after_hours = 23
+
+[params]
+interval = ["1s", "1m", "3m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "8h", "12h", "1d", "3d", "1w", "1M"]
+window = ["1h", "4h", "1d"]
+levels = ["5", "10", "20"]
+speed = ["100ms"]
+
+[[channels]]
+name = "trade"
+pattern = "trade"
+symbols = true
+wire = "{symbol}@trade"
+message_types = ["trade"]
+description = "Từng lệnh khớp"
+
+[[channels]]
+name = "agg_trade"
+pattern = "agg_trade"
+symbols = true
+wire = "{symbol}@aggTrade"
+message_types = ["aggTrade"]
+description = "Lệnh khớp gộp theo một lệnh chủ động"
+
+[[channels]]
+name = "block_trade"
+pattern = "block_trade"
+symbols = true
+wire = "{symbol}@blockTrade"
+message_types = ["blockTrade"]
+description = "Giao dịch khối"
+
+[[channels]]
+name = "kline"
+pattern = "kline.{interval}"
+symbols = true
+wire = "{symbol}@kline_{interval}"
+message_types = ["kline"]
+description = "Nến đang chạy theo UTC; k.x = true là nến đã đóng"
+
+[[channels]]
+name = "mini_ticker"
+pattern = "mini_ticker"
+symbols = true
+wire = "{symbol}@miniTicker"
+message_types = ["24hrMiniTicker"]
+description = "OHLC và khối lượng 24 giờ trượt, bản gọn"
+
+[[channels]]
+name = "ticker"
+pattern = "ticker"
+symbols = true
+wire = "{symbol}@ticker"
+message_types = ["24hrTicker"]
+description = "Thống kê 24 giờ trượt đầy đủ, kèm giá mua bán tốt nhất"
+
+[[channels]]
+name = "ticker_window"
+pattern = "ticker_window.{window}"
+symbols = true
+wire = "{symbol}@ticker_{window}"
+message_types = ["1hTicker", "4hTicker", "1dTicker"]
+description = "Thống kê theo cửa sổ trượt 1h, 4h, 1d"
+
+[[channels]]
+name = "book_ticker"
+pattern = "book_ticker"
+symbols = true
+wire = "{symbol}@bookTicker"
+message_types = []
+description = "Giá và khối lượng mua bán tốt nhất"
+
+[[channels]]
+name = "depth"
+pattern = "depth.{levels}"
+symbols = true
+wire = "{symbol}@depth{levels}"
+message_types = []
+description = "Sổ lệnh N mức (5, 10, 20), mỗi giây"
+
+[[channels]]
+name = "depth"
+pattern = "depth.{levels}.{speed}"
+symbols = true
+wire = "{symbol}@depth{levels}@{speed}"
+message_types = []
+description = "Sổ lệnh N mức, mỗi 100 ms"
+
+[[channels]]
+name = "diff_depth"
+pattern = "diff_depth"
+symbols = true
+wire = "{symbol}@depth"
+message_types = ["depthUpdate"]
+description = "Thay đổi sổ lệnh, mỗi giây"
+
+[[channels]]
+name = "diff_depth"
+pattern = "diff_depth.{speed}"
+symbols = true
+wire = "{symbol}@depth@{speed}"
+message_types = ["depthUpdate"]
+description = "Thay đổi sổ lệnh, mỗi 100 ms"
+
+[[channels]]
+name = "avg_price"
+pattern = "avg_price"
+symbols = true
+wire = "{symbol}@avgPrice"
+message_types = ["avgPrice"]
+description = "Giá trung bình 5 phút"
+
+[[channels]]
+name = "reference_price"
+pattern = "reference_price"
+symbols = true
+wire = "{symbol}@referencePrice"
+message_types = ["referencePrice"]
+description = "Giá tham chiếu"
+
+[[channels]]
+name = "all_mini_ticker"
+pattern = "all_mini_ticker"
+symbols = false
+wire = "!miniTicker@arr"
+message_types = []
+description = "Mini ticker mọi cặp có thay đổi, một mảng mỗi giây"
+
+[[channels]]
+name = "all_ticker_window"
+pattern = "all_ticker_window.{window}"
+symbols = false
+wire = "!ticker_{window}@arr"
+message_types = []
+description = "Thống kê cửa sổ trượt mọi cặp, một mảng mỗi giây"

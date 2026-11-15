@@ -1,0 +1,37 @@
+version = 1
+
+[interval]
+vi = "Khung thời gian"
+values = { "1m" = "1 phút", "3m" = "3 phút", "5m" = "5 phút", "15m" = "15 phút", "30m" = "30 phút", "1H" = "1 giờ", "4H" = "4 giờ", "1D" = "1 ngày", "1W" = "1 tuần", "1M" = "1 tháng" }
+aliases = { "m" = "1m", "minute" = "1m", "5M" = "5m", "15M" = "15m", "30M" = "30m", "h" = "1H", "H" = "1H", "1h" = "1H", "hour" = "1H", "4h" = "4H", "d" = "1D", "D" = "1D", "1d" = "1D", "day" = "1D", "w" = "1W", "W" = "1W", "1w" = "1W", "week" = "1W", "M" = "1M", "month" = "1M" }
+
+[asset]
+vi = "Nhóm tài sản: tham số `asset` của các thao tác chung"
+values = { equity = "Cổ phiếu", index = "Chỉ số", futures = "Hợp đồng tương lai", warrant = "Chứng quyền có bảo đảm", etf = "Quỹ ETF", fund = "Quỹ mở, quỹ đóng", bond = "Trái phiếu", commodity = "Hàng hoá", crypto = "Tiền mã hoá", forex = "Ngoại tệ" }
+aliases = { "stock" = "equity", "derivative" = "futures", "cw" = "warrant", "covered_warrant" = "warrant" }
+
+[exchange]
+vi = "Sàn"
+values = { HOSE = "Sàn HOSE (TP.HCM)", HNX = "Sàn HNX (Hà Nội)", UPCOM = "Thị trường UPCoM", DERIVATIVE = "Phái sinh (HNX)", BOND = "Trái phiếu (HNX)", DELISTED = "Đã huỷ niêm yết" }
+aliases = { "HSX" = "HOSE", "UPCoM" = "UPCOM" }
+
+[symbol]
+vi = "Mã chung: mã chứng khoán viết hoa; chỉ số theo cách viết của sở (VNINDEX, HNXINDEX, UPCOMINDEX, VN30)"
+
+[index_symbol]
+vi = "Mã chung của chỉ số quốc tế, theo cách viết phổ biến trên thị trường"
+values = { "SPX" = "S&P 500", "DJI" = "Dow Jones Industrial Average", "IXIC" = "Nasdaq Composite", "NDX" = "Nasdaq 100", "RUT" = "Russell 2000", "VIX" = "CBOE Volatility Index", "DXY" = "U.S. Dollar Index", "N225" = "Nikkei 225", "HSI" = "Hang Seng", "SSEC" = "Shanghai Composite", "KS11" = "KOSPI", "SET" = "SET Index", "JKSE" = "Jakarta Composite", "PSEI" = "PSEi", "FTSE" = "FTSE 100", "GDAXI" = "DAX", "FCHI" = "CAC 40", "STOXX50E" = "Euro Stoxx 50", "AXJO" = "S&P/ASX 200", "FTSEEM" = "FTSE Emerging" }
+aliases = { "SP500" = "SPX", "S&P500" = "SPX", "USA500" = "SPX", "US500" = "SPX", "GSPC" = "SPX", "^GSPC" = "SPX", "^SPX" = "SPX", "DOWJONES" = "DJI", "DJIA" = "DJI", "USA30" = "DJI", "US30" = "DJI", "^DJI" = "DJI", "NASDAQ" = "IXIC", "COMP" = "IXIC", "^IXIC" = "IXIC", "USATECH" = "NDX", "US100" = "NDX", "^NDX" = "NDX", "RUSSELL2000" = "RUT", "USSC2000" = "RUT", "^RUT" = "RUT", "^VIX" = "VIX", "DOLLAR" = "DXY", "DX-Y.NYB" = "DXY", "^DXY" = "DXY", "NIKKEI225" = "N225", "NIKKEI" = "N225", "JPN225" = "N225", "NK225" = "N225", "^N225" = "N225", "HANGSENG" = "HSI", "HK50" = "HSI", "^HSI" = "HSI", "SHANGHAI" = "SSEC", "SHCOMP" = "SSEC", "000001.SS" = "SSEC", "KOSPI" = "KS11", "^KS11" = "KS11", "^SET.BK" = "SET", "JCI" = "JKSE", "^JKSE" = "JKSE", "UK100" = "FTSE", "^FTSE" = "FTSE", "DAX" = "GDAXI", "GER30" = "GDAXI", "GER40" = "GDAXI", "^GDAXI" = "GDAXI", "CAC40" = "FCHI", "FRA40" = "FCHI", "^FCHI" = "FCHI", "EU50" = "STOXX50E", "EUSTX50" = "STOXX50E", "^STOXX50E" = "STOXX50E", "AUS200" = "AXJO", "^AXJO" = "AXJO" }
+
+[report_period]
+vi = "Kỳ báo cáo tài chính"
+values = { year = "Năm", quarter = "Quý" }
+aliases = { "yearly" = "year", "annual" = "year", "y" = "year", "quarterly" = "quarter", "q" = "quarter" }
+
+[sensitive]
+keys = [
+    "apikey", "api_key", "x-api-key", "x-fh-apikey", "apisecret", "api_secret", "secret",
+    "privatekey", "private_key", "otp", "pin", "password", "username", "token", "accesstoken",
+    "access_token", "refreshtoken", "refresh_token", "trading-token", "authorization", "signature",
+    "x-signature", "transactionid", "transaction_id", "accountno", "account_no",
+]

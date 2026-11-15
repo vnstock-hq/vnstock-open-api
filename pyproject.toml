@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vnstock-oapi"
+dynamic = ["version"]
+description = "Đăng nhập và nạp dữ liệu thô qua Open API chính thức của công ty chứng khoán, bằng khoá của chính bạn."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Vnstock" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
+]
+dependencies = [
+    "httpx>=0.27",
+    # The OS trust store: antivirus and workplace roots live there, not in certifi (core/transport.py).
+    "truststore>=0.10",
+    # Imported directly by core/transport.py (bundled roots for containers without ca-certificates).
+    "certifi>=2024.2.2",
+    "platformdirs>=4",
+    "keyring>=24",
+    "tomli>=2; python_version < '3.11'",
+    "tzdata; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+stream = ["websockets>=13"]
+dev = ["pytest>=8", "ruff>=0.8", "mypy>=1.10", "websockets>=13"]
+
+[project.scripts]
+vnstock-oapi = "vnstock_oapi.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "vnstock_oapi._version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vnstock_oapi*"]
+
+[tool.setuptools.package-data]
+vnstock_oapi = ["py.typed", "spec/*.json", "spec/*.toml", "spec/sources/*/*.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 110
+src = ["."]
+extend-exclude = [".agents"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "S", "UP"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S"]
+
+[tool.mypy]
+strict = true
+python_version = "3.10"

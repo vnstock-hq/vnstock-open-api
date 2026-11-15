@@ -1,0 +1,231 @@
+# Giấy phép sử dụng vnstock-oapi
+
+Phiên bản: vnstock-oapi-license-2026.11.1
+
+Ngày công bố và hiệu lực: 01/11/2026
+
+Bản này thay bản vnstock-oapi-license-2026.11: thêm mục 1.1 về gói mở rộng.
+
+Văn bản này quy định quyền sử dụng phần mềm `vnstock-oapi`, gồm mã nguồn, tài liệu và các tệp đi kèm trong kho mã
+này. Đây là giấy phép riêng, không phải giấy phép mã nguồn mở. Các quyền không được cấp rõ ràng dưới đây đều được
+bảo lưu.
+
+## 1. Quyền được cấp
+
+Với điều kiện tuân thủ giấy phép này, mỗi cá nhân được cấp quyền có giới hạn, không độc quyền, không thể chuyển
+nhượng để:
+
+- đọc và kiểm tra mã nguồn;
+- cài đặt, chạy và sử dụng phần mềm cho mục đích cá nhân, học tập hoặc nghiên cứu;
+- sửa đổi phần mềm trên thiết bị do mình kiểm soát cho các mục đích trên;
+- trích dẫn những đoạn mã ngắn khi thảo luận kỹ thuật, với điều kiện ghi rõ nguồn và không dùng việc trích dẫn để
+  tái tạo hoặc phân phối phần đáng kể của phần mềm;
+- gửi đề xuất, báo lỗi hoặc phần sửa đổi về kho mã gốc thông qua issue hoặc pull request.
+
+Quyền này được cấp cho cá nhân trực tiếp sử dụng phần mềm. Việc một tổ chức thanh toán chi phí, cung cấp thiết bị
+hoặc quản lý tài khoản không tự mở rộng phạm vi giấy phép cho tổ chức hay cho người khác.
+
+## 1.1. Gói mở rộng
+
+Bạn được công bố và chia sẻ miễn phí phần mềm do chính bạn viết có dùng `vnstock-oapi` qua API công khai của nó
+(các tên do `vnstock_oapi` và `vnstock_oapi.ext` cung cấp), gọi là "gói mở rộng", kể cả khai `vnstock-oapi` là
+thành phần phụ thuộc, mà không cần văn bản đồng ý riêng, với điều kiện:
+
+- gói mở rộng không chứa, không đóng gói kèm và không phân phối mã nguồn hay bản sửa đổi của `vnstock-oapi`; người
+  dùng tự cài `vnstock-oapi` từ kho mã gốc hoặc kho gói của hệ sinh thái Vnstock;
+- bạn không thu phí cho gói mở rộng hay cho quyền dùng nó;
+- mỗi người dùng tự kết nối tới nguồn bằng tài khoản và key của chính họ; gói mở rộng không vận hành dịch vụ, API
+  hay máy chủ trung gian để truy xuất dữ liệu thay người khác, và không cung cấp lại dữ liệu lấy qua
+  `vnstock-oapi`;
+- gói mở rộng không dùng `vnstock-oapi` để gửi lệnh giao dịch hay truy xuất thông tin tài khoản của người dùng;
+- gói mở rộng không sửa, vô hiệu hoá hay vượt qua cơ chế kiểm soát của `vnstock-oapi`, gồm giới hạn host và
+  phương thức, kiểm tra khi đăng ký nguồn và cơ chế che key;
+- gói mở rộng ghi rõ là dùng `vnstock-oapi`, kèm liên kết tới kho mã gốc và giấy phép này; không dùng tên hay nhãn
+  hiệu Vnstock theo cách khiến người khác hiểu là gói do Vnstock phát hành, bảo trợ hay kiểm định; không ghi
+  `vnstock-oapi` là bên tạo ra dữ liệu.
+
+Gói mở rộng là phần mềm của bạn. Bạn chịu trách nhiệm về mã, cách dùng và việc tuân thủ điều khoản của nguồn.
+Người dùng gói mở rộng vẫn dùng `vnstock-oapi` theo giấy phép này. Dùng `vnstock-oapi` cho hoạt động thương mại,
+hay ngoài các điều kiện trên, vẫn cần văn bản đồng ý riêng theo mục 2.
+
+## 2. Phạm vi cần có chấp thuận riêng
+
+Bạn cần văn bản đồng ý riêng của chủ sở hữu quyền tác giả trước khi:
+
+- dùng phần mềm hoặc bản sửa đổi cho hoạt động thương mại, cung cấp dịch vụ hoặc công việc tạo doanh thu;
+- sao chép, công bố, bán, cho thuê, cấp phép lại hoặc phân phối phần mềm hay bản sửa đổi cho người khác;
+- cung cấp phần mềm như một phần của sản phẩm, dịch vụ, API, thư viện hoặc hệ thống mà bên thứ ba có thể sử dụng,
+  trừ gói mở rộng theo mục 1.1;
+- dùng phần mềm để làm sản phẩm có giá trị chính là giúp bên thứ ba truy xuất dữ liệu;
+- loại bỏ hoặc làm sai lệch thông báo về quyền tác giả, giấy phép hay nguồn gốc phần mềm.
+
+Việc đưa mã nguồn lên kho GitHub này nhằm giúp người dùng xem, kiểm tra, học tập, nghiên cứu và đóng góp về kho
+gốc. Việc đó không cấp quyền sử dụng cho mọi mục đích và không cho phép tự do phân phối lại.
+
+## 3. Dữ liệu và dịch vụ của nguồn bên thứ ba
+
+`vnstock-oapi` giúp người dùng tự kết nối tới Open API bằng tài khoản, key và quyền truy cập của chính mình. Giấy
+phép này chỉ cấp quyền đối với phần mềm; không xác lập hoặc chuyển giao quyền đối với dữ liệu, API, chỉ số, nhãn
+hiệu hay nội dung của nguồn bên thứ ba.
+
+Bạn phải tự kiểm tra và tuân thủ điều khoản của từng nguồn, gồm điều kiện về truy cập, lưu trữ, hiển thị, chia sẻ
+và sử dụng kết quả. Không được dùng phần mềm để né biện pháp bảo vệ, vượt giới hạn truy cập, gây tải bất thường,
+can thiệp trái phép vào hệ thống của nguồn hoặc thực hiện hành vi trái pháp luật.
+
+## 4. Quyền tác giả và đóng góp
+
+Vũ Văn Thịnh là tác giả và chủ sở hữu quyền tác giả đối với `vnstock-oapi`, trừ những thành phần được ghi rõ là
+thuộc bên thứ ba.
+
+Khi gửi mã, tài liệu hoặc nội dung khác qua issue hay pull request, bạn xác nhận mình có quyền gửi phần đóng góp
+đó. Bạn đồng ý cấp cho chủ sở hữu quyền tác giả quyền sử dụng, sửa đổi, kết hợp, công bố, phân phối và cấp phép lại
+phần đóng góp như một phần của `vnstock-oapi` và hệ sinh thái Vnstock. Quyền này có tính không độc quyền, không thể
+thu hồi và không yêu cầu trả phí bản quyền. Bạn vẫn giữ quyền tác giả đối với phần do mình sáng tạo.
+
+## 5. Phần mềm theo hiện trạng
+
+Phần mềm được cung cấp theo hiện trạng kỹ thuật. Chức năng kết nối và kết quả trả về còn phụ thuộc vào cấu hình
+của người dùng, quyền của tài khoản, tính sẵn có, độ chính xác, độ trễ và điều khoản của nguồn bên thứ ba.
+
+Trong phạm vi pháp luật cho phép, tác giả không bảo đảm phần mềm luôn hoạt động liên tục, không có lỗi hoặc phù
+hợp với một mục đích cụ thể; đồng thời không chịu trách nhiệm cho thiệt hại gián tiếp phát sinh từ việc sử dụng
+phần mềm, dữ liệu đầu vào hoặc kết quả mà người dùng chưa tự kiểm tra. Điều khoản này không loại trừ trách nhiệm
+hay quyền của người dùng mà pháp luật không cho phép loại trừ.
+
+Phần mềm là công cụ nghiên cứu, không phải khuyến nghị đầu tư.
+
+## 6. Chấm dứt quyền sử dụng
+
+Quyền sử dụng theo giấy phép này chấm dứt khi bạn vi phạm điều khoản và không khắc phục trong vòng 14 ngày kể từ
+khi nhận được thông báo. Chủ sở hữu quyền tác giả có thể chấm dứt ngay nếu vi phạm gây tổn hại trực tiếp tới phần
+mềm, hệ thống của nguồn hoặc quyền sở hữu trí tuệ.
+
+Khi quyền sử dụng chấm dứt, bạn phải ngừng sử dụng và xoá các bản sao thuộc quyền kiểm soát của mình, trừ phần
+pháp luật yêu cầu lưu giữ. Các điều khoản về quyền tác giả, dữ liệu bên thứ ba, giới hạn trách nhiệm và xử lý vi
+phạm vẫn tiếp tục có hiệu lực.
+
+Việc sử dụng các quyền được cấp tại mục 1 và mục 1.1 đồng nghĩa với việc bạn chấp nhận giấy phép này. Nếu không đồng ý, bạn
+vẫn có thể xem trang kho mã theo điều kiện của GitHub nhưng không được cài đặt, chạy, sửa đổi hoặc sử dụng phần
+mềm theo các quyền nêu trên.
+
+---
+
+# vnstock-oapi Software License
+
+Version: vnstock-oapi-license-2026.11.1
+
+Publication and effective date: 1 November 2026
+
+This version replaces vnstock-oapi-license-2026.11: section 1.1 on extension packages is added.
+
+This document governs the use of `vnstock-oapi`, including its source code, documentation, and accompanying files
+in this repository. This is a custom license, not an open-source license. All rights not expressly granted below
+are reserved.
+
+The English text below is a complete translation of the Vietnamese license above. If the two texts are interpreted
+differently, the Vietnamese text prevails.
+
+## 1. Rights granted
+
+Subject to compliance with this license, each individual is granted a limited, non-exclusive, non-transferable
+right to:
+
+- read and inspect the source code;
+- install, run, and use the software for personal, educational, or research purposes;
+- modify the software on devices under their control for those purposes;
+- quote short code excerpts in technical discussions, provided that the source is identified and the excerpts are
+  not used to reconstruct or distribute a substantial part of the software; and
+- submit suggestions, bug reports, or modifications to the original repository through issues or pull requests.
+
+These rights are granted to the individual who directly uses the software. An organization paying costs,
+providing equipment, or administering an account does not by itself extend this license to that organization or
+to anyone else.
+
+## 1.1. Extension packages
+
+You may publish and share, free of charge, software you write yourself that uses `vnstock-oapi` through its public
+API (the names provided by `vnstock_oapi` and `vnstock_oapi.ext`), an "extension package", including declaring
+`vnstock-oapi` as a dependency, without separate written permission, provided that:
+
+- the extension package does not contain, bundle, or distribute the source code of `vnstock-oapi` or a modified
+  version of it; users install `vnstock-oapi` themselves from the original repository or from the Vnstock
+  ecosystem's package index;
+- you do not charge for the extension package or for the right to use it;
+- each user connects to sources with their own account and keys; the extension package does not operate a service,
+  API, or intermediary server that retrieves data on behalf of others, and does not provide data retrieved through
+  `vnstock-oapi` to others;
+- the extension package does not use `vnstock-oapi` to send trading orders or to retrieve users' account
+  information;
+- the extension package does not modify, disable, or circumvent the controls of `vnstock-oapi`, including host and
+  method restrictions, the checks applied when a source is registered, and key redaction; and
+- the extension package states that it uses `vnstock-oapi`, with a link to the original repository and to this
+  license; it does not use the Vnstock name or marks in a way that suggests the package is published, endorsed, or
+  certified by Vnstock; and it does not identify `vnstock-oapi` as the producer of data.
+
+An extension package is your software. You are responsible for its code, its use, and compliance with each
+source's terms. Users of an extension package still use `vnstock-oapi` under this license. Using `vnstock-oapi`
+for commercial activities, or outside the conditions above, still requires separate written permission under
+section 2.
+
+## 2. Uses requiring separate permission
+
+You must obtain separate written permission from the copyright owner before you:
+
+- use the software or a modified version for commercial activities, service delivery, or revenue-generating work;
+- copy, publish, sell, rent, sublicense, or distribute the software or a modified version to another person;
+- provide the software as part of a product, service, API, library, or system that a third party can use, other
+  than an extension package under section 1.1;
+- use the software to create a product whose primary value is enabling third parties to retrieve data; or
+- remove or misrepresent any notice concerning copyright, licensing, or the origin of the software.
+
+The source code is placed in this GitHub repository so that users can view, inspect, learn from, research, and
+contribute to the original repository. Its presence here does not grant a right to use it for every purpose or to
+redistribute it freely.
+
+## 3. Third-party data and services
+
+`vnstock-oapi` helps users connect to Open APIs using their own accounts, keys, and access rights. This license
+grants rights only to the software. It does not establish or transfer any right to third-party data, APIs,
+indices, trademarks, or content.
+
+You are responsible for reviewing and complying with each source's terms, including conditions that govern
+access, storage, display, sharing, and use of results. You may not use the software to circumvent safeguards,
+exceed access limits, create abnormal load, interfere with a source's systems without authorization, or engage in
+unlawful conduct.
+
+## 4. Copyright and contributions
+
+Vũ Văn Thịnh is the author and copyright owner of `vnstock-oapi`, except for components expressly identified as
+belonging to third parties.
+
+When you submit code, documentation, or other material through an issue or pull request, you represent that you
+have the right to submit that contribution. You grant the copyright owner the right to use, modify, combine,
+publish, distribute, and sublicense the contribution as part of `vnstock-oapi` and the Vnstock ecosystem. This
+grant is non-exclusive, irrevocable, and royalty-free. You retain copyright in material that you created.
+
+## 5. Software provided as is
+
+The software is provided in its current technical condition. Connectivity and returned results also depend on
+the user's configuration, account permissions, and the availability, accuracy, latency, and terms of third-party
+sources.
+
+To the extent permitted by law, the author does not warrant that the software will operate continuously, be
+error-free, or be fit for a particular purpose. The author is not liable for indirect loss arising from use of
+the software, input data, or results that the user has not independently checked. This provision does not exclude
+liability or user rights that cannot lawfully be excluded.
+
+The software is a research tool, not investment advice.
+
+## 6. Termination
+
+Your rights under this license terminate if you breach its terms and do not remedy the breach within 14 days
+after receiving notice. The copyright owner may terminate those rights immediately if a breach directly harms
+the software, a source's systems, or intellectual property rights.
+
+Upon termination, you must stop using the software and delete copies under your control, except for copies that
+the law requires you to retain. Provisions concerning copyright, third-party data, limitation of liability, and
+the handling of breaches continue to apply after termination.
+
+By exercising any right granted in sections 1 and 1.1, you accept this license. If you do not agree, you may still view the
+repository page under GitHub's terms, but you may not install, run, modify, or use the software under the rights
+set out above.
